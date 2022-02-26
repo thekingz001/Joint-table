@@ -1,0 +1,31 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body text-center">
+      <h1><i class="fab fa-node-js fa-3x"></i></h1>
+      <p>Joint Table Page</p>
+
+    </div>
+  </div>
+</div>
+
+<table id="table" border="1" class="container">  
+  <thead>  
+      <tr>  
+          <th>ID</th>  
+          <th>name_th</th>  
+          <th>name_en</th>  
+          <th>geography</th>
+      </tr>  
+  </thead>  
+    <tbody>  
+    <% for(var i=0; i < data.length; i++) { %>
+      <tr>  
+          <td><%= i+1 %></td>
+          <td><%= data[i].provinces.name_th %></td>  
+          <td><%= data[i].provinces.name_en %></td>
+          <td><%= data[i].name %></td>  
+
+      </tr>  
+    <% } %>
+    </tbody>
+</table>

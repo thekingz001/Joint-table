@@ -1,5 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
+const expressLayouts = require('express-ejs-layouts');
+const bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -10,8 +12,14 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+
+// EJS
+app.use(expressLayouts);
 app.set('view engine', 'ejs');
+
+// Express body parser
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(logger('dev'));
 app.use(express.json());

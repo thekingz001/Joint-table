@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
   .then((test) => {
       //console.log(JSON.stringify(test));
       const data = JSON.stringify(test);
-      res.status(200).render('index', {data: data,
+      //res.send(test);
+      res.status(200).render('welcome', {data: test,
       title: "Test _ Joint" })
     })
   .catch((error) => { res.status(400).send(error); });
